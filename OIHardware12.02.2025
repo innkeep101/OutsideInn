@@ -1,54 +1,85 @@
 # The Outside Inn — Hardware Stack
 
+**Broadcast Infrastructure** | Last Updated: December 2, 2025
+
+> ⚠️ **CONFIDENTIAL** — Not to be distributed without authorization
+
+---
+
 ## Project Goal
 
-The Outside Inn operates two concurrent broadcast channels:
+The Outside Inn operates a single 24/7 broadcast with two modes:
 
-1. **24/7 LoFi Radio Stream** — A continuous animated stream featuring Holdt (a steampunk Holden Caulfield) writing at a desk, with original music by Carson Thatcher looping over the animation by Marwan Hasnaoui.
+1. **Radio Mode** — A continuous animated stream featuring Holdt (a steampunk Holden Caulfield) writing at a desk, with original music by Carson Thatcher looping over the animation by Marwan Hasnaoui. Music at 100% volume.
 
-2. **Gaming Livestreams** — Scheduled variety gaming streams hosted by E.I. Werner, with the LoFi radio music playing at reduced volume in the background.
+2. **Live Mode** — When E.I. Werner goes live, the Inn hosts his stream. Carson's music continues at 50% volume behind gameplay. Audiences mix—radio listeners discover the host, gaming viewers discover the Inn.
 
-Both channels simulcast across **YouTube, Twitch, Kick, Facebook, and Rumble** from a nomadic setup in Costa Rica.
+Both modes simulcast across **YouTube, Twitch, Kick, Facebook, and Rumble** from a nomadic setup in Costa Rica.
 
 ---
 
 ## Hardware
 
+### Streaming Core
+
 | Item | Purpose |
 |------|---------|
-| **STREAMING CORE** | |
 | Gigabyte AERO X16 (RTX 5070 / 32GB) | Main streaming machine — runs OBS 24/7, NVENC hardware encoding |
 | ASUS ZenScreen 15.6" | Secondary display for chat monitoring and dashboard |
 | Elgato Stream Deck + | One-touch scene switching, audio mixing, OBS hotkeys |
-| Elgato Key Light Neo | Face lighting for gaming streams |
-| Blue Yeti Nano | Voice capture for gaming streams |
+| Elgato Key Light Neo | Face lighting for live streams |
+| Blue Yeti Nano | Voice capture for live streams |
 | Sony WH-1000XM5 | Audio monitoring and noise isolation |
 | KLIM Wind Cooling Pad | Thermal management for continuous 24/7 operation |
-| **GOPRO RIG** | |
+
+### GoPro Rig
+
+| Item | Purpose |
+|------|---------|
 | GoPro HERO13 Black | Travel content, POV footage, behind-the-scenes |
 | Surf Bundle Accessories | Versatile mounting for adventure content |
 | Carbon Fiber Extension Pole | Extended reach shots |
 | Tripod + Ballhead | Stable stationary shots |
-| **STORAGE** | |
+
+### Storage
+
+| Item | Purpose |
+|------|---------|
 | SanDisk Extreme 2TB SSD | Primary storage — animation files, music loops, stream assets |
 | Samsung T9 2TB SSD | Backup storage — cloud sync, redundancy |
 | SanDisk Extreme 256GB microSD | GoPro footage capture |
 | SanDisk Extreme 64GB microSD | GoPro backup card |
-| **INTERNET REDUNDANCY** | |
+
+### Internet Redundancy
+
+| Item | Purpose |
+|------|---------|
 | GL.iNet GL-MT6000 Router | Traffic management, dual-WAN failover |
 | Netgear Nighthawk M7 Pro | 5G/LTE backup when fiber drops |
 | Bingfu MIMO Antenna | Cell signal boost in rural Costa Rica |
 | BENFEI USB-C Ethernet | Wired connection for stability |
 | Speedify (software) | Bonds fiber + mobile, automatic failover |
-| **POWER BACKUP** | |
+
+### Power Backup
+
+| Item | Purpose |
+|------|---------|
 | Anker 737 (24,000mAh) | Laptop battery backup during brownouts |
 | TalentCell Mini UPS | Keeps router online during power blips |
 | ELECOM NESTOUT (15,000mAh) | Waterproof emergency backup |
-| **CHARGING** | |
+
+### Charging
+
+| Item | Purpose |
+|------|---------|
 | Anker 100W 3-Port GaN | Charges laptop + phone + accessories simultaneously |
 | Anker 7-in-1 USB-C Hub | Expands laptop connectivity |
 | Anker Prime 240W Cable | High-wattage laptop charging |
-| **PROTECTION** | |
+
+### Protection
+
+| Item | Purpose |
+|------|---------|
 | Tortuga Pro 40L | Main travel bag with laptop compartment |
 | Alpaka Elements Tech Case | Waterproof cable/accessory organizer |
 | Laptop Cable Lock | Physical security in shared spaces |
@@ -68,10 +99,35 @@ Both channels simulcast across **YouTube, Twitch, Kick, Facebook, and Rumble** f
 
 ---
 
+## Broadcast Modes
+
+| Mode | Source | Music | Transition |
+|------|--------|-------|------------|
+| **Radio Mode** | Cloud VPS running OBS 24/7 | 100% volume | Default state |
+| **Live Mode** | Local laptop OBS | 50% background | E.I. Werner goes live |
+
+When E.I. Werner ends a live stream, the broadcast returns to Radio Mode automatically. The Inn is always open.
+
+---
+
 ## Uptime Target
 
 **99.95%** — achieved through:
+
 - Dual internet pipes with automatic failover
 - Battery backup for laptop and router
 - Hardware encoding (GPU, not CPU)
 - Remote monitoring and recovery procedures
+- Cloud VPS for Radio Mode (not dependent on local machine)
+
+---
+
+## Related Documents
+
+| Document | Contents |
+|----------|----------|
+| **OIOverview** | Full Outside Inn project overview, workstreams, timeline, team |
+| **EIWerner** | E.I. Werner brand identity, relationship to Outside Inn, streaming strategy |
+| **OILegal** | Entity formation, compliance, ID numbers for Outside Inn Studios, LLC |
+
+---
